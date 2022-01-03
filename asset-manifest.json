@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/Resume/static/css/main.4ff9c7a7.chunk.css",
+    "main.js": "/Resume/static/js/main.0a064032.chunk.js",
+    "main.js.map": "/Resume/static/js/main.0a064032.chunk.js.map",
+    "runtime-main.js": "/Resume/static/js/runtime-main.f4d8342b.js",
+    "runtime-main.js.map": "/Resume/static/js/runtime-main.f4d8342b.js.map",
+    "static/css/2.20a6c27e.chunk.css": "/Resume/static/css/2.20a6c27e.chunk.css",
+    "static/js/2.7c97df2b.chunk.js": "/Resume/static/js/2.7c97df2b.chunk.js",
+    "static/js/2.7c97df2b.chunk.js.map": "/Resume/static/js/2.7c97df2b.chunk.js.map",
+    "index.html": "/Resume/index.html",
+    "static/css/2.20a6c27e.chunk.css.map": "/Resume/static/css/2.20a6c27e.chunk.css.map",
+    "static/css/main.4ff9c7a7.chunk.css.map": "/Resume/static/css/main.4ff9c7a7.chunk.css.map",
+    "static/js/2.7c97df2b.chunk.js.LICENSE.txt": "/Resume/static/js/2.7c97df2b.chunk.js.LICENSE.txt",
+    "static/media/custom.css": "/Resume/static/media/Calibri-Regular.29c57b05.ttf",
+    "static/media/Me-tie.1b6f93eb.jpg": "/Resume/static/media/Me-tie.1b6f93eb.jpg",
+    "static/media/bootstrap-icons.css": "/Resume/static/media/bootstrap-icons.dfd0ea12.woff2",
+    "static/media/all.min.css": "/Resume/static/media/fa-solid-900.eeccf4f6.woff",
+    "static/media/music.eb4c29ce.mp3": "/Resume/static/media/music.eb4c29ce.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f4d8342b.js",
+    "static/css/2.20a6c27e.chunk.css",
+    "static/js/2.7c97df2b.chunk.js",
+    "static/css/main.4ff9c7a7.chunk.css",
+    "static/js/main.0a064032.chunk.js"
+  ]
+}
