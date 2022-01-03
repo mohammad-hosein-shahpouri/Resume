@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#212529">
+    <base href="%PUBLIC_URL%/" />
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.svg">
+
+    <title>Please wait...</title>
+    <style>
+        body {
+            background-color: #212529 !important;
+        }
+
+        #app .loader-holder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+            #app .loader-holder .loader {
+                border-radius: 50px;
+                height: 50px;
+                width: 50px;
+                border: 10px double;
+                border-color: white #f8f9faaa;
+                animation-name: loader-spin;
+                animation-iteration-count: infinite;
+                animation-duration: .75s;
+                animation-timing-function: linear;
+            }
+
+        @keyframes loader-spin {
+            0% {
+                transform: rotate(0deg)
+            }
+
+            25% {
+                transform: rotate(90deg)
+            }
+
+            50% {
+                transform: rotate(180deg)
+            }
+
+            75% {
+                transform: rotate(270deg)
+            }
+
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+    </style>
+</head>
+<body>
+    <noscript>
+        You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="app">
+        <div class="loader-holder">
+            <div class="loader"></div>
+        </div>
+    </div>
+</body>
+</html>
