@@ -9,6 +9,7 @@
 # production
 /build
 /dist
+**/[Ss]tyles.Compiled.css
 
 # misc
 .DS_Store

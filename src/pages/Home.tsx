@@ -1,12 +1,11 @@
 import React, { Component, Fragment, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { EnvironmentFilled, EnvironmentTwoTone, InstagramFilled, SmileFilled } from "@ant-design/icons"
 
 import MeTie from "../assets/images/Me-tie.jpg"
 import { ChangeLanguage, Store } from '../Store';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faGithub, faInstagram, faLinkedin, faTelegram, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import { faSmile } from '@fortawesome/free-solid-svg-icons';
+import { faLocationDot, faSmile } from '@fortawesome/free-solid-svg-icons';
 
 export function Home() {
     var { lang } = useParams<{ lang: string }>();
@@ -70,7 +69,7 @@ export function Home() {
                 <div className="d-flex flex-column mx-md-3 mt-3 text-right text-dark">
                     <p className="h2">{lang == fa ? "محمدحسین شاهپوری" : "Mohammad Hosein Shahpouri"}</p>
                     <p className="h4 d-flex">
-                        < EnvironmentFilled className={"text-danger " + (lang == fa ? " ms-2" : " me-2")} />
+                    <FontAwesomeIcon icon={faLocationDot}  className={"text-danger " + (lang == fa ? " ms-2" : " me-2")} />
                         <span className="d-inline-block">{lang == fa ? "اصفهان، ایران" : "Isfahan, Iran"}</span>
                     </p>
                     <p className="h4">{lang == fa ? `محمدحسین شاهپوری هستم، متولد 1382/6/8، برنامه نویس تحت وب و دسکتاپ` : `I'm Mohammad Hosein Shahpouri, Born on 30 Aug 2003, Desktop and Web Developer`} </p>

@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import { Redirect, Route, Router, Switch, useHistory } from 'react-router';
 import Layout from './components/Layout';
 import { Home } from './pages/Home';
@@ -7,9 +6,9 @@ import { Activities } from './pages/Activities';
 import { Contact } from './pages/Contact';
 
 import "bootstrap/dist/css/bootstrap.min.css"
-import "bootstrap-icons/font/bootstrap-icons.css"
+
 import "antd/dist/antd.min.css"
-import "./assets/styes/custom.css"
+import "./assets/styles/Styles.Compiled.css"
 
 
 import { connect, Provider } from 'react-redux';
@@ -23,13 +22,13 @@ export default function App() {
             <Layout >
                 <Router history={useHistory()}>
                     <Switch>
-                        <Route path='/:lang/Home/' component={Home} />
-                        <Route path='/:lang/Skills/' component={Skills} />
-                        <Route path='/:lang/Activities/' component={Activities} />
-                        <Route path='/:lang/Contact/' component={Contact} />
+                        <Route path='/Resume/:lang/Home/' component={Home} />
+                        <Route path='/Resume/:lang/Skills/' component={Skills} />
+                        <Route path='/Resume/:lang/Activities/' component={Activities} />
+                        <Route path='/Resume/:lang/Contact/' component={Contact} />
 
                         <Route>
-                            <Redirect to={`/${lang}/Home`} />
+                            <Redirect to={`/Resume/${lang}/Home`} />
                         </Route>
                     </Switch>
                 </Router>
