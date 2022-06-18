@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -32,7 +32,7 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@4.1.7
       with:
           branch: gh-pages
-          folder: build
+          folder: dist
     #- run: npm test
     #- run:  git config --global user.email "mh.shahpouri@gmail.com"
     #- run:  git config --global user.name "Mohammad Hosein Shahpouri"
