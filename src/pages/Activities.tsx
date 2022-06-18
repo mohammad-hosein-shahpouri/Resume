@@ -1,4 +1,6 @@
-﻿import * as React from "react"
+﻿import { faFlask } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as React from "react"
 import { useParams } from "react-router";
 import GitHubLogo from "../assets/images/github-logo.png"
 import { ChangeLanguage, Store } from "../Store";
@@ -51,7 +53,7 @@ export function Activities() {
 
                 <div className="d-flex flex-row justify-content-center text-white w-50 mx-auto mb-3">
                     <hr className="border border-2 border-white w-50 mx-1 mt-2" />
-                    <i className="fas fa-flask h2 mx-2 mb-0"></i>
+                    <FontAwesomeIcon icon={faFlask} className="h2 mx-2 mb-0" />
                     <hr className="border border-2 border-white w-50 mx-1 mt-2" />
                 </div>
             </div>

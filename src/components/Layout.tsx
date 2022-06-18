@@ -14,7 +14,7 @@ function Layout(props: props) {
     return (
         <Fragment>
             <Helmet>
-                <title data-react-helmet="true">{(props.lang == fa ? "سایت شخصی محمدحسین شاهپوری" : "Mohammad Hosein Shahpouri's Personal Site")}</title>
+                <title>{(props.lang == fa ? "سایت شخصی محمدحسین شاهپوری" : "Mohammad Hosein Shahpouri's Personal Site")}</title>
             </Helmet>
 
             <div className={"d-flex flex-column flex-md-row min-vh-100" + (props.lang == fa ? " rtl" : " ltr")}>

@@ -4,6 +4,9 @@ import { EnvironmentFilled, EnvironmentTwoTone, InstagramFilled, SmileFilled } f
 
 import MeTie from "../assets/images/Me-tie.jpg"
 import { ChangeLanguage, Store } from '../Store';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faGithub, faInstagram, faLinkedin, faTelegram, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faSmile } from '@fortawesome/free-solid-svg-icons';
 
 export function Home() {
     var { lang } = useParams<{ lang: string }>();
@@ -15,37 +18,36 @@ export function Home() {
         <div className="col-10 col-md-9 d-flex flex-wrap justify-content-around mb-2 pt-2 pb-1 px-3 bg-light rounded-3"        >
             <a href="https://t.me/mohammad_hosein_shahpouri" target="_blank"
                 className="h1 text-primary d-inline-block mx-3">
-                <i className="fab fa-telegram text-center mx-auto d-block"></i>
+                <FontAwesomeIcon icon={faTelegram} className="text-center mx-auto d-block" />
             </a>
 
             <a href="https://www.instagram.com/mohammad_hosein_shahpouri/" target="_blank"
                 className="h1 text- d-inline-block mx-3" style={{ color: "var(--bs-pink)" }}>
-                {/*    <InstagramFilled className="text-center mx-auto d-block" />*/}
-                <i className="fab fa-instagram text-center mx-auto d-block"></i>
+                    <FontAwesomeIcon icon={faInstagram} className=" text-center mx-auto d-block" />
             </a>
 
             <a href="https://api.whatsapp.com/send?phone=+989135949659" target="_blank"
                 className="h1 text-success d-inline-block mx-3">
-                <i className="fab fa-whatsapp text-center mx-auto d-block"></i>
+                <FontAwesomeIcon icon={faWhatsapp} className="text-center mx-auto d-block" />
             </a>
 
             <a href="https://www.linkedin.com/in/mohammad-hosein-shahpouri/" target="_blank"
                 className="h1 text-primary d-inline-block mx-3">
-                <i className="fab fa-linkedin text-center mx-auto d-block"></i>
+                <FontAwesomeIcon icon={faLinkedin} className=" text-center mx-auto d-block" />
             </a>
 
             <a href="https://github.com/mohammad-hosein-shahpouri" target="_blank"
                 className="h1 text-dark d-inline-block mx-3">
-                <i className="fab fa-github text-center mx-auto d-block"></i>
+                <FontAwesomeIcon icon={faGithub} className=" text-center mx-auto d-block" />
             </a>
             <a href="https://www.facebook.com/mohammad.hosein.shahpouri" target="_blank"
                 className="h1 text-primary d-inline-block mx-3">
-                <i className="fab fa-facebook text-center mx-auto d-block"></i>
+                <FontAwesomeIcon icon={faFacebook} className="text-center mx-auto d-block" />
             </a>
 
             <a href="https://twitter.com/M_H_Shahpouri" target="_blank"
                 className="h1 text-info d-inline-block mx-3">
-                <i className="fab fa-twitter text-center mx-auto d-block"></i>
+                <FontAwesomeIcon icon={faTwitter} className="text-center mx-auto d-block" />
             </a>
         </div>
     )
@@ -57,7 +59,7 @@ export function Home() {
 
                 <div className="d-flex flex-row justify-content-center text-white w-50 mx-auto mb-3">
                     <hr className="border border-2 border-white w-50 mx-1 mt-2" />
-                    <i className="fas fa-smile h2 mx-2 mb-0"></i>
+                    <FontAwesomeIcon icon={faSmile} className="h2 mx-2 mb-0" />
                     <hr className="border border-2 border-white w-50 mx-1 mt-2" />
                 </div>
             </div>

@@ -6,6 +6,8 @@ import { notification } from "antd";
 import { CheckCircleOutlined, CloseCircleOutlined, SmileOutlined } from "@ant-design/icons";
 import { error } from "console";
 import { Helmet } from "react-helmet";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCode } from "@fortawesome/free-solid-svg-icons";
 
 export function Contact() {
     const emailInputRef = React.useRef<HTMLInputElement>(null);
@@ -82,7 +84,7 @@ export function Contact() {
 
                 <div className="d-flex flex-row justify-content-center text-white w-50 mx-auto mb-3">
                     <hr className="border border-2 border-white w-50 mx-1 mt-2" />
-                    <i className="fas fa-code h2 mx-2 mb-0"></i>
+                    <FontAwesomeIcon icon={faCode} className="h2 mx-2 mb-0" />
                     <hr className="border border-2 border-white w-50 mx-1 mt-2" />
                 </div>
             </div>

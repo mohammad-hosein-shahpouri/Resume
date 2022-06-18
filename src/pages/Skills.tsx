@@ -2,6 +2,8 @@
 import { Rate } from 'antd';
 import { useParams } from "react-router-dom";
 import { ChangeLanguage, Store } from "../Store";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCode } from "@fortawesome/free-solid-svg-icons";
 
 const skills = [
     {
@@ -111,7 +113,7 @@ export function Skills() {
 
             <div className="d-flex flex-row justify-content-center text-white w-50 mx-auto mb-3">
                 <hr className="border border-2 border-white w-50 mx-1 mt-2" />
-                <i className="fas fa-code h2 mx-2 mb-0"></i>
+                <FontAwesomeIcon icon={faCode} className=" h2 mx-2 mb-0" />
                 <hr className="border border-2 border-white w-50 mx-1 mt-2" />
             </div>
         </div>

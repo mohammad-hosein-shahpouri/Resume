@@ -4,6 +4,8 @@ import { Link, useHistory, useParams } from "react-router-dom";
 import Music from "../assets/music/music.mp3"
 import { ChangeLanguage, RootState, Store } from "../Store";
 import { connect } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCode, faFlask, faHome, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 type props = {
     lang?: string
@@ -79,22 +81,22 @@ function NavBar(props: props) {
                 <div className="w-100 h-100 d-inline-flex flex-row flex-md-column justify-content-around justify-content-md-start bg-light  px-md-2">
 
                     <Link to="Home" className="text-center text-dark text-decoration-none  mt-2 cursor-pointer d-flex flex-column w-25 w-md-auto">
-                        <i className="fas fa-home h1 d-block mx-auto"></i>
+                       <FontAwesomeIcon icon={faHome} className="h1 d-block mx-auto" />
                         <span className="p-1  ">{props.lang == fa ? "خانه" : "Home"}</span>
                     </Link>
 
                     <Link to="Skills" className="text-center text-dark text-decoration-none  mt-2 cursor-pointer d-flex flex-column w-25 w-md-auto">
-                        <i className="fas fa-code h1 d-block mx-auto"></i>
+                       <FontAwesomeIcon icon={faCode} className="h1 d-block mx-auto" />
                         <span className="p-1 text-wrap-none ">{props.lang == fa ? "مهارت ها" : "Skills"}</span>
                     </Link>
 
                     <Link to="Activities" className="text-center text-dark text-decoration-none  mt-2 cursor-pointer d-flex flex-column w-25 w-md-auto">
-                        <i className="fas fa-flask h1 d-block mx-auto"></i>
+                       <FontAwesomeIcon icon={faFlask} className="h1 d-block mx-auto" />
                         <span className="p-1 text-wrap-none ">{props.lang == fa ? "فعالیت ها" : "Activities"}</span>
                     </Link>
 
                     <Link to="Contact" className="text-center text-dark text-decoration-none mt-2 cursor-pointer d-flex flex-column w-25 w-md-auto">
-                        <i className="fas fa-phone h1 d-block mx-auto"></i>
+                       <FontAwesomeIcon icon={faPhone} className="h1 d-block mx-auto" />
                         <span className="p-1 ">{props.lang == fa ? "تماس" : "Contact"}</span>
                     </Link>
 
