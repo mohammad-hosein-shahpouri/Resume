@@ -1,4 +1,4 @@
-﻿import * as React from "react"
+﻿import { Fragment } from "react"
 import { Rate } from 'antd';
 import { useParams } from "react-router-dom";
 import { ChangeLanguage, Store } from "../Store";
@@ -72,56 +72,56 @@ const skills = [
     },
     {
         name: "Python",
-        percentage: .5
+        percentage: 0.5
     },
     {
         name: "Node.js",
-        percentage: .5
+        percentage: 0.5
     }
 ]
 
 export function Skills() {
     var { lang } = useParams<{ lang: string }>();
-    lang = lang.toLowerCase();
+    lang = lang!.toLowerCase();
     const fa = "fa"
     Store.dispatch(ChangeLanguage(lang))
 
     const skillBars = () => {
         var compenentArray: JSX.Element[] = []
 
-        skills.forEach((value, index) =>
+        for (const item of skills) {
             compenentArray.push(
-                <React.Fragment>
-                    <div className=" col-12 col-md-6 col-xxl-4 d-flex flex-column px-1 px-xxl-2">
-                        <div className="d-flex flex-row justify-content-between">
-                            <h4 className="mt-1 me-1">
-                                {value?.name}
+                <Fragment>
+                    <div className=" w-full md:w-1/2 xl:w-1/3 px-1 xl:px-2">
+                        <div className="flex flex-row justify-between">
+                            <h4 className="mt-1 mr-1">
+                                {item.name}
                             </h4>
-                            <Rate allowHalf disabled value={value.percentage} />
+                            <Rate allowHalf disabled value={item.percentage} />
                         </div>
                     </div>
-                </React.Fragment>
+                </Fragment>
             )
-        )
+        }
+  
 
         return (compenentArray)
     }
 
-    return (<React.Fragment>
-        <div className="col-12">
-            <p className="text-center h1 mt-5 text-white">{lang == fa ? "مهارت های من" : "My Skills"}</p>
-
-            <div className="d-flex flex-row justify-content-center text-white w-50 mx-auto mb-3">
-                <hr className="border border-2 border-white w-50 mx-1 mt-2" />
-                <FontAwesomeIcon icon={faCode} className=" h2 mx-2 mb-0" />
-                <hr className="border border-2 border-white w-50 mx-1 mt-2" />
+    return (
+        <Fragment>
+            <div className="w-full">
+                <p className="text-center h1 mt-5 text-white">{lang == fa ? "مهارت های من" : "My Skills"}</p>
+                <div className="flex flex-row justify-center text-white w-1/2 mx-auto mb-3">
+                    <hr className="border-2 border-white w-1/2 mx-1 mt-2" />
+                    <FontAwesomeIcon icon={faCode} className=" h2 mx-2 mb-0" />
+                    <hr className="border-2 border-white w-1/2 mx-1 mt-2" />
+                </div>
             </div>
-        </div>
 
-        <div className="col-10 col-md-9 container bg-light d-flex flex-column flex-md-wrap mx-auto rounded-3 font-regula ltr">
-            <div className="row p-2">
+            <div className="flex flex-col md:flex-wrap w-5/6 md:w-3/4 bg-light mx-auto rounded-lg ltr">
                 {skillBars()}
             </div>
-        </div>
-    </React.Fragment>)
+        </Fragment>
+    )
 }

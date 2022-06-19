@@ -1,20 +1,20 @@
-﻿import * as React from "react";
-import $ from "jquery"
-import { Link, useHistory, useParams } from "react-router-dom";
+﻿import $ from "jquery"
+import { Link, useNavigate } from "react-router-dom";
 import Music from "../assets/music/music.mp3"
 import { ChangeLanguage, RootState, Store } from "../Store";
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode, faFlask, faHome, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { Fragment, useRef, useState } from "react";
 
 type props = {
     lang?: string
 }
 
 function NavBar(props: props) {
-    const [isMusicPlaying, setIsMusicPlaying] = React.useState(true)
-    const audioRef = React.useRef<HTMLAudioElement>(null)
-    const history = useHistory()
+    const [isMusicPlaying, setIsMusicPlaying] = useState(true)
+    const audioRef = useRef<HTMLAudioElement>(null)
+    const navigate = useNavigate()
     const playOrPause = () => {
         if (isMusicPlaying)
             audioRef.current?.pause()
@@ -38,28 +38,28 @@ function NavBar(props: props) {
         var pathArray = pathname.split("/")
         //setLang(lang == fa ? "en" : "fa")
         Store.dispatch(ChangeLanguage(props.lang == fa ? "en" : "fa"))
-        history.push(props.lang == fa ? "/En/" + pathArray[pathArray.length - 1] : "/Fa/" + pathArray[pathArray.length - 1])
+        navigate(props.lang == fa ? "/En/" + pathArray[pathArray.length - 1] : "/Fa/" + pathArray[pathArray.length - 1])
     }
 
-    return (<React.Fragment>
+    return (<Fragment>
         <audio src={Music} autoPlay loop ref={audioRef} />
 
-        <div id="mobile-menu" className="d-flex flex-column" >
-            <div className="d-flex flex-row justify-content-between py-1 py-md-0">
-                <div className="d-block d-md-none">
-                    <div className="text-white d-flex flex-row justify-content-start border-bottom-0 m-2 mb-0 pr-1">
+        <div id="mobile-menu" className="flex flex-col" >
+            <div className="flex flex-row justify-between py-1 py-md-0">
+                <div className="block md:hidden">
+                    <div className="text-white flex flex-row justify-start border-bottom-0 m-2 mb-0 pr-1">
                         <button className="btn btn-outline-dark border-0 p-1" onClick={showMobileNavBar}>
-                            <div className="bar1 bg-white rounded-pill"></div>
-                            <div className="bar2 bg-white my-1 rounded-pill"></div>
-                            <div className="bar3 bg-white rounded-pill"></div>
+                            <div className="bar1 bg-white rounded-full"></div>
+                            <div className="bar2 bg-white my-1 rounded-full"></div>
+                            <div className="bar3 bg-white rounded-full"></div>
                         </button>
                     </div>
                 </div>
 
-                <div className={"btn btn-light rounded-md-0 w-md-100 rounded-pill border-0 border-bottom border-dark border-3 mx-5 mx-md-auto mt-2 mt-md-0 px-2 px-md-auto pt-2 pb-1 music-button " + (isMusicPlaying ? "playing" : "")} style={{
+                <div className={"btn btn-light md:rounded-none md:w-full rounded-full border-0 border-bottom border-dark  mx-5 md:mx-auto mt-2 md:mt-0 px-2 md:px-auto pt-2 pb-1 music-button " + (isMusicPlaying ? "playing" : "")} style={{
                     maxHeight: "48px"
                 }} onClick={playOrPause}>
-                    <div className="d-flex flex-row justify-content-evenly" style={{
+                    <div className="flex flex-row justify-evenly" style={{
                         transform: "rotate(3.14rad)",
                         height: "20px"
                     }} >
@@ -70,47 +70,47 @@ function NavBar(props: props) {
                     </div>
                 </div>
 
-                <div className="d-md-none d-inline-flex flex-wrap align-content-center mx-2 px-1">
+                <div className="md:hidden inline-flex flex-wrap align-content-center mx-2 px-1">
                     <button className="btn btn-light px-2 pt-1 pb-0 mt-2" onClick={changeLanguage}>
                         {props.lang == fa ? "En" : "Fa"}
                     </button>
                 </div>
             </div>
 
-            <div className="slide-d-none d-md-flex flex-column h-md-100" role="navbar" >
-                <div className="w-100 h-100 d-inline-flex flex-row flex-md-column justify-content-around justify-content-md-start bg-light  px-md-2">
+            <div className="slide-d-none md:flex flex-col md:h-full" role="navbar" >
+                <div className="w-full h-full inline-flex flex-row md:flex-col justify-around md:justify-start bg-light md:px-2">
 
-                    <Link to="Home" className="text-center text-dark text-decoration-none  mt-2 cursor-pointer d-flex flex-column w-25 w-md-auto">
-                       <FontAwesomeIcon icon={faHome} className="h1 d-block mx-auto" />
+                    <Link to="Home" className="text-center text-dark text-decoration-none  mt-2 cursor-pointer flex flex-col w-1/4 md:w-auto">
+                        <FontAwesomeIcon icon={faHome} className="h1 block mx-auto" />
                         <span className="p-1  ">{props.lang == fa ? "خانه" : "Home"}</span>
                     </Link>
 
-                    <Link to="Skills" className="text-center text-dark text-decoration-none  mt-2 cursor-pointer d-flex flex-column w-25 w-md-auto">
-                       <FontAwesomeIcon icon={faCode} className="h1 d-block mx-auto" />
+                    <Link to="Skills" className="text-center text-dark text-decoration-none  mt-2 cursor-pointer flex flex-col w-1/4 md:w-auto">
+                        <FontAwesomeIcon icon={faCode} className="h1 block mx-auto" />
                         <span className="p-1 text-wrap-none ">{props.lang == fa ? "مهارت ها" : "Skills"}</span>
                     </Link>
 
-                    <Link to="Activities" className="text-center text-dark text-decoration-none  mt-2 cursor-pointer d-flex flex-column w-25 w-md-auto">
-                       <FontAwesomeIcon icon={faFlask} className="h1 d-block mx-auto" />
+                    <Link to="Activities" className="text-center text-dark text-decoration-none  mt-2 cursor-pointer flex flex-col w-1/4 md:w-auto">
+                        <FontAwesomeIcon icon={faFlask} className="h1 block mx-auto" />
                         <span className="p-1 text-wrap-none ">{props.lang == fa ? "فعالیت ها" : "Activities"}</span>
                     </Link>
 
-                    <Link to="Contact" className="text-center text-dark text-decoration-none mt-2 cursor-pointer d-flex flex-column w-25 w-md-auto">
-                       <FontAwesomeIcon icon={faPhone} className="h1 d-block mx-auto" />
+                    <Link to="Contact" className="text-center text-dark text-decoration-none mt-2 cursor-pointer flex flex-col w-1/4 md:w-auto">
+                        <FontAwesomeIcon icon={faPhone} className="h1 block mx-auto" />
                         <span className="p-1 ">{props.lang == fa ? "تماس" : "Contact"}</span>
                     </Link>
 
                 </div>
 
-                <div className="d-none d-md-inline-flex flex-wrap align-content-center" style={{
+                <div className="hidden md:inline-flex flex-wrap align-center" style={{
                 }}>
-                    <button className="btn btn-light no-shadow border-0 border-top border-dark border-3 w-100 rounded-0" onClick={changeLanguage}>
+                    <button className="btn btn-light no-shadow border-0 border-top border-dark border-3 w-full rounded-none" onClick={changeLanguage}>
                         {props.lang == fa ? "En" : "Fa"}
                     </button>
                 </div>
             </div>
         </div>
-    </React.Fragment>)
+    </Fragment>)
 }
 
 function mapStateToProps(state: RootState) { return { lang: state.lang } }

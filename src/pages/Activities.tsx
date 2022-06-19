@@ -1,6 +1,6 @@
 ﻿import { faFlask } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import * as React from "react"
+import { Fragment } from "react";
 import { useParams } from "react-router";
 import GitHubLogo from "../assets/images/github-logo.png"
 import { ChangeLanguage, Store } from "../Store";
@@ -22,7 +22,7 @@ const activityList = [
 
 export function Activities() {
     var { lang } = useParams<{ lang: string }>();
-    lang = lang.toLowerCase();
+    lang = lang!.toLowerCase();
     const fa = "fa"
     Store.dispatch(ChangeLanguage(lang))
 
@@ -30,13 +30,13 @@ export function Activities() {
         var array = []
         for (var item of activityList) {
             array.push(
-                <div className={"col-10 col-sm-5 col-lg-3 col-xxl-2 d-flex flex-column justify-content-between bg-light rounded-3 p-1 m-1 activity-card" + (lang == fa ? " rtl" : "")}>
+                <div className={"w-5/6 sm:w-5/12 lg:w-1/4 2xl:w-1/6 d-flex flex-col justify-between bg-light rounded-lg p-1 m-1 activity-card" + (lang == fa ? " rtl" : "")}>
                     <img src={GitHubLogo}
-                        className="github-projects-image rounded-lg mb-1 w-100" />
+                        className="github-projects-image rounded-lg mb-1 w-full" />
                     <p className="text-center h3 my-1">{item.Title}</p>
                     <p className="text-center m-0">{lang == fa ? item.DescriptionFa : item.DescriptionEn}</p>
                     <a href={item.Link} target="_blank"
-                        className="text-decoration-none btn btn-outline-dark pulse m-1 d-block mx-auto">
+                        className="text-decoration-none btn btn-outline-dark pulse m-1 block mx-auto">
                         {lang == fa ? "کلیک کنید" : "Click Here"}
                     </a>
                 </div>
@@ -47,21 +47,21 @@ export function Activities() {
     }
 
     return (
-        <React.Fragment>
-            <div className="col-12">
+        <Fragment>
+            <div className="w-full">
                 <p className="text-center h1 mt-5 text-white">{lang == fa ? "فعالیت های من" : "My Activities"} </p>
 
-                <div className="d-flex flex-row justify-content-center text-white w-50 mx-auto mb-3">
-                    <hr className="border border-2 border-white w-50 mx-1 mt-2" />
+                <div className="flex flex-row justify-center text-white w-1/2 mx-auto mb-3">
+                    <hr className="border-2 border-white w-1/2 mx-1 mt-2" />
                     <FontAwesomeIcon icon={faFlask} className="h2 mx-2 mb-0" />
-                    <hr className="border border-2 border-white w-50 mx-1 mt-2" />
+                    <hr className="border-2 border-white w-1/2 mx-1 mt-2" />
                 </div>
             </div>
-            <div className="col-10 conatiner p-2">
-                <div className="row justify-content-center">
+            <div className="w-5/6 p-2">
+                <div className="justify-center">
                     {ActivityComponents()}
                 </div>
             </div>
-        </React.Fragment>
+        </Fragment>
     )
 }

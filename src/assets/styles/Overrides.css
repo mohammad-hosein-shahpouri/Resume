@@ -1,0 +1,29 @@
+.ant-rate-star.ant-rate-star-full,
+.ant-rate-star.ant-rate-star-half.ant-rate-star-active {
+    color: var(--bs-warning) !important;
+}
+
+.ant-rate-star.ant-rate-star-zero .ant-rate-star-first,
+.ant-rate-star-second {
+    color: var(--bs-secondary);
+}
+
+.rtl .ant-notification-notice-close {
+    left: 22px !important;
+    right: auto !important;
+}
+
+.rtl .ant-notification-notice-with-icon .ant-notification-notice-message {
+    margin-left: auto !important;
+    margin-right: 48px !important;
+}
+
+.rtl .ant-notification-notice-message {
+    padding-left: 24px !important;
+    padding-right: 0 !important;
+}
+
+.rtl .ant-notification-notice-description {
+    margin-left: auto !important;
+    margin-right: 48px !important;
+}

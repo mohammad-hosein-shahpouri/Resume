@@ -3,7 +3,8 @@ module.exports = {
         "./src/**/*.{js,jsx,ts,tsx}",
     ],
     presets: [],
-    darkMode: 'media', // or 'class'
+    darkMode: 'media', // or 'class'    
+    important: true,
     theme: {
         screens: {
             sm: '640px',
@@ -16,10 +17,15 @@ module.exports = {
             transparent: colors.transparent,
             black: colors.black,
             white: colors.white,
-            info: colors.sky[400],
-            danger: colors.red[700],
-            default: 'var(--default)',
+            primary: 'var(--primary)',
             secondary: 'var(--secondary)',
+            danger: 'var(--danger)',
+            warning: 'var(--warning)',
+            success: 'var(--success)',
+            info: 'var(--info)',
+            dark: 'var(--dark)',
+            light: 'var(--light)',
+            pink: 'var(--pink)',
         }),
         columns: {
             auto: 'auto',

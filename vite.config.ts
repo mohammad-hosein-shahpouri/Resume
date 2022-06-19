@@ -5,5 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   publicDir: 'public',
   base:"/Resume/",
-  plugins: [react()]
+  plugins: [react()],
+  optimizeDeps:{
+    entries:["node_modules"]
+  }
 })

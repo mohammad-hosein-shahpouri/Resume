@@ -17,10 +17,10 @@ function Layout(props: props) {
                 <title>{(props.lang == fa ? "سایت شخصی محمدحسین شاهپوری" : "Mohammad Hosein Shahpouri's Personal Site")}</title>
             </Helmet>
 
-            <div className={"d-flex flex-column flex-md-row min-vh-100" + (props.lang == fa ? " rtl" : " ltr")}>
+            <div className={"flex flex-col md:flex-row min-h-[100vh]" + (props.lang == fa ? " rtl" : " ltr")}>
                 <NavBar />
-                <div className="container-fluid w-100 position-relative pb-3" id="page">
-                    <div className="row justify-content-center">
+                <div className="w-full relative pb-3" id="page">
+                    <div className="flex flex-wrap justify-center">
                         {props.children}
                     </div>
                 </div>
