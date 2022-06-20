@@ -1,17 +1,18 @@
-import { Fragment } from 'react';
+import { Fragment, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 
 import MeTie from "../assets/images/Me-tie.jpg"
-import { ChangeLanguage, Store } from '../Store';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faGithub, faInstagram, faLinkedin, faTelegram, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faLocationDot, faSmile } from '@fortawesome/free-solid-svg-icons';
+import { LanguageContext } from '../utils/Context';
 
 export function Home() {
     var { lang } = useParams<{ lang: string }>();
     lang = lang!.toLowerCase();
     const fa = "fa"
-    Store.dispatch(ChangeLanguage(lang))
+    var { Language, SetLanguage } = useContext(LanguageContext);
+    SetLanguage(lang);
 
     const socialMedia = () => (
         <div className="w-5/6 md:w-3/4 flex flex-wrap justify-around mb-2 pt-2 pb-1 px-3 bg-light rounded-lg"        >

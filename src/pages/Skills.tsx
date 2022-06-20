@@ -1,9 +1,9 @@
-﻿import { Fragment } from "react"
+﻿import { Fragment, useContext } from "react"
 import { Rate } from 'antd';
 import { useParams } from "react-router-dom";
-import { ChangeLanguage, Store } from "../Store";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
+import { LanguageContext } from "../utils/Context";
 
 const skills = [
     {
@@ -84,7 +84,9 @@ export function Skills() {
     var { lang } = useParams<{ lang: string }>();
     lang = lang!.toLowerCase();
     const fa = "fa"
-    Store.dispatch(ChangeLanguage(lang))
+
+    var {Language,SetLanguage} = useContext(LanguageContext);
+    SetLanguage(lang);
 
     const skillBars = () => {
         var compenentArray: JSX.Element[] = []
@@ -103,7 +105,7 @@ export function Skills() {
                 </Fragment>
             )
         }
-  
+
 
         return (compenentArray)
     }

@@ -1,11 +1,11 @@
-﻿import {Fragment, useRef} from "react"
+﻿import {Fragment, useContext, useRef} from "react"
 import $, { ajax } from "jquery"
 import { useParams } from "react-router";
-import { ChangeLanguage, Store } from "../Store";
 import { notification } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faEnvelopeOpenText, faMapMarkerAlt, faMobile, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
+import { LanguageContext } from "../utils/Context";
 
 export function Contact() {
     const emailInputRef = useRef<HTMLInputElement>(null);
@@ -15,7 +15,9 @@ export function Contact() {
     var { lang } = useParams<{ lang: string }>();
     lang = lang!.toLowerCase();
     const fa = "fa"
-    Store.dispatch(ChangeLanguage(lang))
+    
+    var {Language,SetLanguage} = useContext(LanguageContext);
+    SetLanguage(lang);
 
     const writeNewMessageAsync = async () => {
         const email = emailInputRef.current?.value

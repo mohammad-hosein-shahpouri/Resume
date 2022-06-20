@@ -1,9 +1,9 @@
 ﻿import { faFlask } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Fragment } from "react";
-import { useParams } from "react-router";
+import { Fragment, useContext } from "react";
+import { useParams } from "react-router-dom";
 import GitHubLogo from "../assets/images/github-logo.png"
-import { ChangeLanguage, Store } from "../Store";
+import { LanguageContext } from "../utils/Context";
 
 const activityList = [
     {
@@ -24,7 +24,8 @@ export function Activities() {
     var { lang } = useParams<{ lang: string }>();
     lang = lang!.toLowerCase();
     const fa = "fa"
-    Store.dispatch(ChangeLanguage(lang))
+    var { Language, SetLanguage } = useContext(LanguageContext);
+    SetLanguage(lang);
 
     const ActivityComponents = () => {
         var array = []
