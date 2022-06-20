@@ -38,6 +38,7 @@
 * {
     font-family: 'IranSans', Calibri !important;
     font-weight: bold !important;
+    user-select: none;
 }
 
 body {

@@ -4,4 +4,4 @@ declare module '*.svg';
 declare module '*.png';
 declare module '*.jpg';
 declare module '*.mp3';
-/// <reference types="react-scripts" />
+/// <reference types="vite/client" />

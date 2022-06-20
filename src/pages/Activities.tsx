@@ -59,7 +59,7 @@ export function Activities() {
                 </div>
             </div>
             <div className="w-5/6 p-2">
-                <div className="justify-center">
+                <div className="flex justify-center">
                     {ActivityComponents()}
                 </div>
             </div>

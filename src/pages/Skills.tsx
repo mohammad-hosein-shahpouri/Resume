@@ -39,16 +39,16 @@ const skills = [
         percentage: 3
     },
     {
-        name: "HTML",
-        percentage: 4.5
+        name: "Node.js",
+        percentage: 2.5
     },
     {
-        name: "CSS",
-        percentage: 4.5
+        name: "Express.js",
+        percentage: 2.5
     },
     {
-        name: "jQuery",
-        percentage: 4.5
+        name: "TailwindCss",
+        percentage: 4
     },
     {
         name: "Bootstrap",
@@ -63,20 +63,20 @@ const skills = [
         percentage: 4
     },
     {
-        name: "MySQL",
-        percentage: 4
-    },
-    {
         name: "MongoDB",
         percentage: 3
     },
     {
-        name: "Python",
-        percentage: 0.5
+        name: "Docker",
+        percentage: 4
+    }, 
+    {
+        name: "Git",
+        percentage: 3
     },
     {
-        name: "Node.js",
-        percentage: 0.5
+        name: "xUnit",
+        percentage: 3
     }
 ]
 
@@ -85,7 +85,7 @@ export function Skills() {
     lang = lang!.toLowerCase();
     const fa = "fa"
 
-    var {Language,SetLanguage} = useContext(LanguageContext);
+    var { Language, SetLanguage } = useContext(LanguageContext);
     SetLanguage(lang);
 
     const skillBars = () => {
@@ -94,7 +94,7 @@ export function Skills() {
         for (const item of skills) {
             compenentArray.push(
                 <Fragment>
-                    <div className=" w-full md:w-1/2 xl:w-1/3 px-1 xl:px-2">
+                    <div className="w-full md:w-1/2  px-1 xl:px-2">
                         <div className="flex flex-row justify-between">
                             <h4 className="mt-1 mr-1">
                                 {item.name}
@@ -121,7 +121,7 @@ export function Skills() {
                 </div>
             </div>
 
-            <div className="flex flex-col md:flex-wrap w-5/6 md:w-3/4 bg-light mx-auto rounded-lg ltr">
+            <div className="flex flex-col md:flex-row md:flex-wrap w-5/6 md:w-3/4 bg-light mx-auto rounded-lg ltr">
                 {skillBars()}
             </div>
         </Fragment>

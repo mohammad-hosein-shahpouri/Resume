@@ -1,11 +1,11 @@
 .ant-rate-star.ant-rate-star-full,
 .ant-rate-star.ant-rate-star-half.ant-rate-star-active {
-    color: var(--bs-warning) !important;
+    color: var(--warning) !important;
 }
 
 .ant-rate-star.ant-rate-star-zero .ant-rate-star-first,
 .ant-rate-star-second {
-    color: var(--bs-secondary);
+    color: var(--secondary);
 }
 
 .rtl .ant-notification-notice-close {
